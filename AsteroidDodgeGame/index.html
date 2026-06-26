@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asteroid Dodge Game - Sci-Fi HUD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-wrapper">
+        <div class="hud-container">
+            <!-- Top Left - Score HUD -->
+            <div class="hud-score">
+                <div class="hud-title">SCORE:</div>
+                <div class="hud-value" id="score">10450</div>
+                <div class="hud-subtitle">High Score: <span id="highScore">10450</span></div>
+            </div>
+
+            <!-- Top Right - Pause Button -->
+            <button id="pauseBtn" class="pause-button">
+                <span class="pause-icon">||</span>
+            </button>
+
+            <!-- Main Canvas -->
+            <canvas id="gameCanvas"></canvas>
+
+            <!-- Left Arrow Indicator -->
+            <div class="direction-indicator left-arrow">◀</div>
+            
+            <!-- Right Arrow Indicator -->
+            <div class="direction-indicator right-arrow">▶</div>
+
+            <!-- Bottom - Controls Info -->
+            <div class="hud-controls">
+                <p>← MOVE LEFT  |  → MOVE RIGHT  |  SPACE START  |  ESC RESET</p>
+            </div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" class="game-over-overlay hidden">
+            <div class="game-over-hud">
+                <div class="hud-title-large">GAME OVER</div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-label">FINAL SCORE</span>
+                        <span class="stat-value" id="finalScore">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">LEVEL</span>
+                        <span class="stat-value" id="finalLevel">1</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">DODGED</span>
+                        <span class="stat-value" id="asteroidsDodged">0</span>
+                    </div>
+                </div>
+                <button id="restartBtn" class="restart-btn">PLAY AGAIN</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
